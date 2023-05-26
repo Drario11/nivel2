@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="home.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>Receitas</title>
+    <! Contrução do CSS interno no proprio HTML   ->
+    <style>
+        div.col, div.col1{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            margin: auto;     
+         }
+         
+         div.col input:not(:last-child){
+            margin-bottom: 15px;
+         }
+         label.label-col0{
+            margin-left: -90%;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+         }
+
+        .adc-btn, .btn-ultimo, .btn-penultimo {
+            background-color: #3741c9bd; /* blue */
+            width: 150px;
+            height: 30px;
+            border: none;
+            color: white;
+            display: inline-block;
+            font-size: 13px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px 2px #4D4C4C;
+            
+          }
+        .adc-btn:hover{
+            box-shadow: 2px 2px 2px 2px #1F1F1F;
+        }
+        .btn-ultimo:hover{
+            box-shadow: 2px 2px 2px 2px #1F1F1F;
+        }
+        .btn-penultimo:hover{
+            box-shadow: 2px 2px 2px 2px #1F1F1F;
+        }
+        div.col1{
+            display:flex;
+            flex-direction:row-reverse;
+            margin: auto;
+        }
+
+        .btn-ultimo, .btn-penultimo{
+            margin-right: auto;
+            margin-top: 10px;
+            margin-left: 3%;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#textoNavbar" aria-controls="textoNavbar" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="textoNavbar">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(Página atual)</span></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="ordenando.html">Ordernando</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="receitas.html">Receitas</a>
+              </li>
+
+          </ul>
+     
+          <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    </header>
+       
+    <! Criei outro body para entender orgonograma dos codigos   ->
+  
+          <body onload="preencheCatalogo()">
+            <nav class="navbar navbar-expand-lg ">
+              
+              </nav>
+            <div class="container-fluid bg-warning" >
+                <div class="pnlCatalogo flex-warp" id="pnlCatalogo">
+                </div>
+            </div>
+            <footer>
+        
+            </footer>      
+       
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                crossorigin="anonymous"></script>
+            <script>
+                lista = {
+                    123123: {
+                        titulo: "Nevada",
+                        imagem: "https://i0.wp.com/porkworld.com.br/wp-content/uploads/2021/11/receita-drink-nevada-canal-to-com-fome-youtube-google-chrome.jpg?resize=800%2C530&ssl=1",
+                        preparo: "Coloca Gelo a gosto, leite condensado, Cachaça, e limão, bata no liquitificador",
+                        ingredientes: ["Cachaça, Leite condessado, Gelo e Limão"]
+                    },
+                    123141: {
+                        titulo: "Arroz de Couve-Flor",
+                        imagem: "https://receitaslowcarb.com.br/wp-content/uploads/2018/01/arroz-de-couve-flor.jpg",
+                        preparo: "Deixe a couve-flor picada. Adicione os ingredientes e refogue bem. Adicione sal, tampe a panela e deixe cozinhar.",
+                        ingredientes: ["Cachaça, Leite condessado, Gelo e Limão"]
+                    },
+                    421312: {
+                        titulo: "Bolo de Café",
+                        imagem: "https://bing.com/th?id=OSK.ea0a1d6abea2ba978d50f6351da5d4a7",
+                        preparo: "Bata o açúcar, as gemas e o café. Adicione farinha e chocolate e mexa bem. Bata as claras e junte à mistura.",
+                        ingredientes: ["Farinha de Trigo", "Açúcar", "Chocolate em pó", "Café Coado", "Ovos"]
+                    }
+        
+                }
+        
+                getListaIngredientes = (dataIngredientes) => {
+                    
+                    const ul = document.createElement("ul")
+                    //para cada ingrediente
+                    dataIngredientes.forEach(
+                        element => {
+                            const li = document.createElement("li")
+                            const litext = document.createTextNode(element)
+                            li.appendChild(litext)
+                            ul.appendChild(li)
+                        }
+                    )
+        
+                    return ul
+        
+                }
+        
+                getCard = (lista) => {
+                    var dataA = Object.values(lista)
+                    let c = 0
+                    dataA.forEach(element => {
+                        
+        //abaixo e criando as divs
+                        const card = document.createElement("div")
+                        card.classList.add("card")
+        // criando as imagens
+                        const cardimgtop = document.createElement("img")
+                        cardimgtop.classList.add("card-img-top")
+                        cardimgtop.src = element.imagem
+                        card.appendChild(cardimgtop)
+                        
+            // criando os titulos            
+                        const cardbody = document.createElement("div")
+                        cardbody.classList.add("card-body")
+                        const cardbodytext = document.createElement("h1")
+                        cardbodytext.classList.add("card-title") 
+                        const cardbodytitle = document.createTextNode(element.titulo)
+                        //o createTextNode não aceita classList, ent eu tive que fzr
+                        //um h1, aplicar a classe a ele e adicionar um TextNode ao h1
+        
+                        cardbodytext.appendChild(cardbodytitle)
+                        cardbody.appendChild(cardbodytext)
+/*final da crianção*/    card.appendChild(cardbody)
+                        //criando os ingredientes
+                        const cardtext = document.createElement("div")
+                        cardtext.classList.add("card-text")
+                        card.appendChild(cardtext)
+        
+                        const lista = getListaIngredientes(dataA[c].ingredientes)
+                        card.appendChild(lista)
+        
+                        const hr = document.createElement("hr")
+                        card.appendChild(hr)
+                      //criando prepado dos ingredientes
+                        const receita = document.createElement("p")
+                        const receitatexto = document.createTextNode(dataA[c].preparo)
+                        receita.classList.add("card-text")
+                        receita.appendChild(receitatexto)
+                        card.appendChild(receita)
+        
+        
+                        document.getElementById("pnlCatalogo").appendChild(card)
+        
+        
+                        c++
+                    })
+        
+        
+                }
+               
+        
+                preencheCatalogo = () => {
+                    getCard(lista)
+                    
+        
+                }
+        
+        
+            </script>
+        </body>
+</body>
+   
+</body>
+</html>
+
+<style>
+
+
+  .card {
+      width: 250px;
+      height: 600px;
+  }
+
+  #pnlCatalogo{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      padding-bottom: 2%;
+      
+  }
+  footer{
+      background-color: rgba(255, 0, 0, 0.126);
+      height: 100px;
+  }
+  nav{
+      background-color: rgba(255, 0, 0, 0.235);
+  }
+
+
+  
+</style>

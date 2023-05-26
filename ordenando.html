@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="home.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>Ordernando Valores</title>
+    <! Contrução do CSS interno no proprio HTML   ->
+    <style>
+        div.col, div.col1{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            margin: auto;     
+         }
+         
+         div.col input:not(:last-child){
+            margin-bottom: 15px;
+         }
+         label.label-col0{
+            margin-left: -90%;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+         }
+
+        .adc-btn, .btn-ultimo, .btn-penultimo {
+            background-color: #3741c9bd; /* blue */
+            width: 150px;
+            height: 30px;
+            border: none;
+            color: white;
+            display: inline-block;
+            font-size: 13px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px 2px #4D4C4C;
+            
+          }
+        .adc-btn:hover{
+            box-shadow: 2px 2px 2px 2px #1F1F1F;
+        }
+        .btn-ultimo:hover{
+            box-shadow: 2px 2px 2px 2px #1F1F1F;
+        }
+        .btn-penultimo:hover{
+            box-shadow: 2px 2px 2px 2px #1F1F1F;
+        }
+        div.col1{
+            display:flex;
+            flex-direction:row-reverse;
+            margin: auto;
+        }
+
+        .btn-ultimo, .btn-penultimo{
+            margin-right: auto;
+            margin-top: 10px;
+            margin-left: 3%;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#textoNavbar" aria-controls="textoNavbar" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="textoNavbar">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(Página atual)</span></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="ordenando.html">Ordernando</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="receitas.html">Receitas</a>
+              </li>
+
+          </ul>
+          <span class="navbar-text">
+         </span>
+        </div>
+      </nav>
+    </header>
+    <! 1º Procedimento | Ordenando com Java Script e DOM  ->
+    <section class="conteudo">
+              
+        <div class="col">
+           <p>
+               Exemplo de inputs em coluna:
+            </p>
+           <label  class="label-col3">valor</label>
+           <input type="text" name="txtn1" id="txtn1">
+           <input class="adc-btn" type="button" value="Adcionar" onclick="Adcionar()">
+           <input id="btn" class="adc-btn" type="button" value="Resultado" onclick="Testee()">
+           <select onChange="teste(this)" name="tipo_unidade" id="tipo_unidade">
+                <option  value="">Selecione</option>
+               <option value="Blubble Sort">Blubble Sort</option>
+               <option value="Selection Sort">Selection Sort</option>
+               <option value="Quick Sort">Quick Sort</option>
+           </select>
+           
+        </div>
+        <div class="col1">
+           <input class="btn-penultimo" type="button" value="Ordernar" onclick="Ordernar()">
+           <input class="btn-ultimo" type="button" value="Misturar" onclick="Misturar()">
+        </div>
+        
+        <div class="res col">
+            <! Essa foi unica forma de conhecimento que tenho para centralizar o resultado   ->
+            <select name="resposta" id="selpergunta" size="10">
+                
+            </select>
+            <div id="res">
+                
+                
+            </div>
+        </div>
+
+     </section>
+     <script src="ordenando.js" defer></script>
+
+    
+   
+
+
+   
+</body>
+</html>
